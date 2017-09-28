@@ -29,7 +29,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/mtk-wifi
   CATEGORY:=Ralink SDK Mango
   TITLE:=Ralink mt7628 wifi AP and Apcli driver ap_client command and iwinfo patch
-  DEPENDS:=@TARGET_ramips_mt7688 +wireless-tools +maccalc +libuci
+  DEPENDS:=@TARGET_ramips_mt7688||@TARGET_ramips_mt7628 +wireless-tools +maccalc +libuci
   ABI_VERSION:=$(PKG_RELEASE)
 endef
 
