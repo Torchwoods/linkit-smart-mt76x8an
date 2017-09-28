@@ -18,7 +18,7 @@ include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 define Package/ated
-  CATEGORY:=Ralink SDK Mango
+  CATEGORY:=Ralink SDK
   TITLE:=ATE Daemon
 endef
 

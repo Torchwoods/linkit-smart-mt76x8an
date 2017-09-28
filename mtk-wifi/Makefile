@@ -5,6 +5,7 @@
 
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
+include $(INCLUDE_DIR)/package.mk
 
 PKG_NAME:=mtk-wifi
 PKG_VERSION:=V1.1
@@ -27,13 +28,24 @@ PKG_CONFIG_DEPENDS := \
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mtk-wifi
-  CATEGORY:=Ralink SDK Mango
+  SECTION:=ralink
+  CATEGORY:=Ralink SDK
   TITLE:=Ralink mt7628 wifi AP and Apcli driver ap_client command and iwinfo patch
   DEPENDS:=@TARGET_ramips_mt7688||@TARGET_ramips_mt7628 +wireless-tools +maccalc +libuci
   ABI_VERSION:=$(PKG_RELEASE)
 endef
 
 define Build/Configure
+endef
+
+define Build/Prepare
+        echo
+endef
+
+define Package/mtk-wifi/description
+  Wireless information library with consistent interface for proprietary Broadcom,
+  madwifi, nl80211 and wext driver interfaces.
+  Command line frontend for the wireless information library.
 endef
 
 IWINFO_BACKENDS := \
