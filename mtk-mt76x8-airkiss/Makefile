@@ -46,7 +46,7 @@ LIBS:=-ltxdevicesdk -lpthread -ldl -lstdc++ -ltxdevicesdk
 
 define Package/mtk-mt76x8-airkiss/install
 	$(INSTALL_DIR) $(1)/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mtk-mt76x8-airkiss $(1)/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/airkiss $(1)/bin
 endef
 
 
