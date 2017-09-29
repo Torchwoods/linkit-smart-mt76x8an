@@ -39,7 +39,7 @@ TARGET_CFLAGS += \
 
 define Package/mtk-mt76x8-ated/install
 	$(INSTALL_DIR) $(1)/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mtk-mt76x8-ated $(1)/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ated $(1)/bin
 endef
 
 
