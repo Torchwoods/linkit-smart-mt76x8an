@@ -5,7 +5,6 @@
 
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
-include $(INCLUDE_DIR)/package.mk
 
 PKG_NAME:=mtk-wifi
 PKG_VERSION:=V1.1
@@ -35,18 +34,17 @@ define Package/mtk-wifi
   ABI_VERSION:=$(PKG_RELEASE)
 endef
 
-define Build/Configure
-endef
-
-define Build/Prepare
-        echo
-endef
 
 define Package/mtk-wifi/description
   Wireless information library with consistent interface for proprietary Broadcom,
   madwifi, nl80211 and wext driver interfaces.
   Command line frontend for the wireless information library.
 endef
+
+
+define Build/Configure
+endef
+
 
 IWINFO_BACKENDS := \
 	$(if $(CONFIG_TARGET_ramips),rt) \
