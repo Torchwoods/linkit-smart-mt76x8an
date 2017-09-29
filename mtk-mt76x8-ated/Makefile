@@ -6,7 +6,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=ated
+PKG_NAME:=mtk-mt76x8-ated
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
@@ -17,12 +17,12 @@ PKG_CONFIG_DEPENDS:=$(foreach c, $(PKG_KCONFIG),$(if $(CONFIG_$c),CONFIG_$(c)))
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-define Package/ated
+define Package/mtk-mt76x8-ated
   CATEGORY:=Ralink SDK
   TITLE:=ATE Daemon
 endef
 
-define Package/ated/description
+define Package/mtk-mt76x8-ated/description
   ATE Daemon
 endef
 
@@ -37,11 +37,11 @@ TARGET_CFLAGS += \
 #MAKE_FLAGS += \
 	CFLAGS="$(TARGET_CFLAGS)"
 
-define Package/ated/install
+define Package/mtk-mt76x8-ated/install
 	$(INSTALL_DIR) $(1)/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ated $(1)/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mtk-mt76x8-ated $(1)/bin
 endef
 
 
-$(eval $(call BuildPackage,ated))
+$(eval $(call BuildPackage,mtk-mt76x8-ated))
 

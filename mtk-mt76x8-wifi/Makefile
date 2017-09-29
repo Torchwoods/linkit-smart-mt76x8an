@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-PKG_NAME:=mtk-wifi
+PKG_NAME:=mtk-mt76x8-wifi
 PKG_VERSION:=V1.1
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
@@ -26,16 +26,16 @@ PKG_CONFIG_DEPENDS := \
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/mtk-wifi
+define Package/mtk-mt76x8-wifi
   SECTION:=ralink
   CATEGORY:=Ralink SDK
-  TITLE:=Ralink mt7628 wifi AP and Apcli driver ap_client command and iwinfo patch
+  TITLE:=Ralink mt7688/28 SDK WIFI
   DEPENDS:=@TARGET_ramips_mt7688||@TARGET_ramips_mt7628 +wireless-tools +maccalc +libuci
   ABI_VERSION:=$(PKG_RELEASE)
 endef
 
 
-define Package/mtk-wifi/description
+define Package/mtk-mt76x8-wifi/description
   Wireless information library with consistent interface for proprietary Broadcom,
   madwifi, nl80211 and wext driver interfaces.
   Command line frontend for the wireless information library.
@@ -76,7 +76,7 @@ define Build/InstallDev
 endef
 
 
-define Package/mtk-wifi/install
+define Package/mtk-mt76x8-wifi/install
 	$(INSTALL_DIR) $(1)/usr/bin $(1)/lib/modules/$(LINUX_VERSION)/
 	$(INSTALL_DIR) $(1)/lib
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/iwinfo $(1)/usr/bin/iwinfo.rt
@@ -88,4 +88,4 @@ define Package/mtk-wifi/install
 	$(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,mtk-wifi))
+$(eval $(call BuildPackage,mtk-mt76x8-wifi))

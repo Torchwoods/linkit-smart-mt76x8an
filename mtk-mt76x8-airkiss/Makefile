@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=airkiss
+PKG_NAME:=mtk-mt76x8-airkiss
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
@@ -13,15 +13,15 @@ PKG_KCONFIG:=RALINK_MT7620 RALINK_MT7628
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-define Package/airkiss
-  SECTION:=Ralink SDK Mango
-  CATEGORY:=Ralink SDK Mango
-  TITLE:=airkiss
+define Package/mtk-mt76x8-airkiss
+  SECTION:=Ralink SDK
+  CATEGORY:=Ralink SDK
+  TITLE:=mtk-mt76x8-airkiss
   DEPENDS:= +libpthread +librt +libstdcpp
 endef
 
-define Package/airkiss/description
-  airkiss for wechat
+define Package/mtk-mt76x8-airkiss/description
+  mtk-mt76x8-airkiss for wechat
 endef
 
 define Build/Prepare
@@ -44,10 +44,10 @@ LIBS:=-ltxdevicesdk -lpthread -ldl -lstdc++ -ltxdevicesdk
 #endef
 
 
-define Package/airkiss/install
+define Package/mtk-mt76x8-airkiss/install
 	$(INSTALL_DIR) $(1)/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/airkiss $(1)/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mtk-mt76x8-airkiss $(1)/bin
 endef
 
 
-$(eval $(call BuildPackage,airkiss))
+$(eval $(call BuildPackage,mtk-mt76x8-airkiss))
