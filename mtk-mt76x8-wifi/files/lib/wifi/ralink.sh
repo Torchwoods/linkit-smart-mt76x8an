@@ -28,7 +28,7 @@ config wifi-iface ap
 	option mode	ap
 	option network  lan
 	option ifname   $dev
-	option ssid	UltraIot-$(cat /sys/class/net/eth0/address|awk -F ":" '{print $5""$6}'| tr a-z A-Z)
+	option ssid	UltraIot-$(cat /sys/class/net/eth0/address|awk -F ":" '{print $4""$5""$6}'| tr a-z A-Z)
 	option encryption none 
 	option hidden    0
 
