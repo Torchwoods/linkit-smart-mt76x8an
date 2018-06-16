@@ -19,7 +19,7 @@ config wifi-device	radio0
 	option variant	$devtype
 	option country	CN
 	option hwmode	$mode
-	option htmode	HT20
+	option htmode	HT40
 	option channel  auto
 	option disabled	0
 
@@ -28,7 +28,7 @@ config wifi-iface ap
 	option mode	ap
 	option network  lan
 	option ifname   $dev
-	option ssid	UltraIot-$(cat /sys/class/net/eth0/address|awk -F ":" '{print $4""$5""$6}'| tr a-z A-Z)
+	option ssid	Ultraiot_$(cat /sys/class/net/eth0/address|awk -F ":" '{print $4""$5""$6}'| tr a-z A-Z)
 	option encryption none 
 	option hidden    0
 
@@ -36,11 +36,10 @@ config wifi-iface sta
 	option device   radio0
 	option disabled 1
 	option mode	sta
-	option network  wan
+	option network  wwan
 	option ifname   $sta
 	option ssid	UplinkAp
 	option key	SecretKey
-	option encryption psk
 EOF
 }
 
@@ -49,10 +48,7 @@ detect_ralink() {
 
 	cpu=$(awk 'BEGIN{FS="[ \t]+: MediaTek[ \t]"} /system type/ {print $2}' /proc/cpuinfo | cut -d" " -f1)
 	case $cpu in
-	MT7688)
-		write_ralink mt_wifi mt7628 ra0 11bgn
-		;;
-	MT7628AN)
+	MT7688 | MT7628AN)
 		write_ralink mt_wifi mt7628 ra0 11bgn
 		;;
 	esac
