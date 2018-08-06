@@ -5,7 +5,6 @@ PKG_VERSION:=2016-02-17
 PKG_RELEASE=1
 
 
-
 define Package/mtk-mt76x8-linkwatch
   SECTION:=net
   CATEGORY:=Network
