@@ -6,8 +6,8 @@ PKG_RELEASE=1
 
 
 define Package/mtk-mt76x8-linkwatch
-  SECTION:=net
-  CATEGORY:=Network
+  SECTION:=ralink
+  CATEGORY:=Ralink SDK
   TITLE:=Manual link dhcp link updater for bridged wan
 endef
 
