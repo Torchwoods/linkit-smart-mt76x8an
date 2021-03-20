@@ -54,7 +54,7 @@ In the Ubuntu system, open the *Terminal* application and type the following com
     * Select the options as below:
         * Target System: `Ralink RT288x/RT3xxx`
         * Subtarget: `MT7688 based boards`
-        * Target Profile: `LinkIt7688`
+        * Target Profile: `YunYinIotXXXX`
     * Save and exit (**use the deafult config file name without changing it**)
 8. Start the compilation process:
     

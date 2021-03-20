@@ -27,8 +27,8 @@ PKG_CONFIG_DEPENDS := \
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mtk-mt76x8-wifi
-  SECTION:=ralink
-  CATEGORY:=Ralink SDK
+  SECTION:=YunYinIot
+  CATEGORY:=YunYinIot
   TITLE:=Ralink mt7688/28 SDK WIFI
   DEPENDS:=@TARGET_ramips_mt7688||@TARGET_ramips_mt7628 +wireless-tools +maccalc +libuci
   ABI_VERSION:=$(PKG_RELEASE)

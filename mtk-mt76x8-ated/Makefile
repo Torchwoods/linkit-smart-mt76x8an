@@ -18,7 +18,8 @@ include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 define Package/mtk-mt76x8-ated
-  CATEGORY:=Ralink SDK
+  SECTION:=YunYinIot
+  CATEGORY:=YunYinIot
   TITLE:=ATE Daemon
 endef
 

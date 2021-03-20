@@ -17,8 +17,8 @@ include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mtk-mt76x8-webui
-	SECTION:=Ralink SDK
-	CATEGORY:=Ralink SDK
+	SECTION:=YunYinIot
+	CATEGORY:=YunYinIot
 	TITLE:=setwifi by web
 	DEPENDS :=
 endef
