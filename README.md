@@ -36,6 +36,10 @@ In the Ubuntu system, open the *Terminal* application and type the following com
     ```
     $ echo src-git linkit https://github.com/Torchwoods/linkit-smart-mt76x8an.git >> feeds.conf
     ```
+	or
+	```
+    $ echo src-git linkit https://gitee.com/Yuniin/linkit-smart-mt76x8an.git >> feeds.conf
+    ```
 5. Update the feed information of all available packages for building the firmware:
     
     ```
